@@ -135,12 +135,7 @@ User.prototype = {
             console.log(result);
             
             if(err) throw err;
-            if(result.length){
-                callback(result);
-            }
-            else{
-                callback(null);
-            }
+            callback(result);
         });
     }
 }
