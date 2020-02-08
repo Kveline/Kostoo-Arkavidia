@@ -71,6 +71,20 @@ User.prototype = {
                 })
             }
         });
+    },
+    getListDesa: function(callback) {
+        let sql = "SELECT * FROM desa";
+        pool.query(sql, (err, result) => {
+            if (err) throw err;
+            callback(result);
+        })
+    },
+    getListDesaByKeyword: function(keyword, callback) {
+        let sql = "SELECT * FROM desa WHERE nama_desa LIKE %?%";
+        pool.query(sql, keyword, (err, result) => {
+            if (err) throw err;
+            callback(result);
+        });
     }
 }
 

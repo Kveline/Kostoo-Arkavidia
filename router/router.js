@@ -82,6 +82,22 @@ router.get("/dashboard", (req, res, next) => {
     }
 });
 
+router.get("/search", (req, res, next) => {
+    if (req.session.type == "desa") {
+        res.redirect("/dashboard");
+    } else {
+        if (req.query.keyword) {
+            user.getListDesaByKeyword(req.query.keyword, (result) => {
+                res.render("jelajahTarget", result);
+            })
+        } else {
+            user.getListDesa((result) => {
+                res.render("jelajahTarget", result);
+            });
+        }
+    }
+});
+
 router.post("/registerDesa", (req, res, next) => {
     let photo = req.files.photo;
     let portofolio = req.files.portofolio;
