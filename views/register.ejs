@@ -10,39 +10,113 @@
 </head>
 
 <body>
-    <form action="/registerDesa" method="post" enctype="multipart/form-data">
-        <input placeholder="Masukan Email..." type="email" name="email" id="">
-        <input placeholder="Masukan Password..." type="password" name="password" id="">
-        <input placeholder="Masukan Nama akun..." type="text" name="nama" id="">
-        <textarea placeholder="Masukan Deskripsi Singkat..." name="description" id="" cols="30" rows="10"></textarea>
-        <input placeholder="Masukan Lokasi..." type="text" name="location" id="">
 
-        <label for="portofolio">Portofolio</label>
-        <input type="file" name="portofolio" id="portofolio">
+    <div class="container">
+        <form action="/registerDesa" method="post" enctype="multipart/form-data">
+            <h2 id="login">Register Desa</h2>
 
-        <label for="photo">Foto</label>
-        <input type="file" name="photo" id="photo">
+            <div class="email">
+                <label for="email">Email</label><br>
+                <input class="input-login" placeholder="Masukan Email..." type="email" name="email" id="">
+            </div>
 
-        <input type="checkbox" name="cat1" id="" value="pertanian">
-        <label for="cat1">Pertanian</label>
+            <div class="password">
+                <label for="password">Password</label><br>
+                <input class="input-login" placeholder="Masukan Password..." type="password" name="password" id="">
+            </div>
 
-        <input type="checkbox" name="cat2" id="" value="peternakan">
-        <label for="cat2">Peternakan</label>
+            <div class="nama-akun">
+                <label for="nama">Nama Desa</label> <br>
+                <input class="input-login" placeholder="Masukan Nama akun..." type="text" name="nama" id="">
 
-        <input type="checkbox" name="cat3" id="" value="kerajinan">
-        <label for="cat3">Kerajinan</label>
-        <input type="submit" value="Register Desa">
-    </form>
+            </div>
 
-    <form action="/registerInvestor" method="post" enctype="multipart/form-data">
-        <input placeholder="Masukan Email..." type="email" name="email" id="">
-        <input placeholder="Masukan Password..." type="password" name="password" id="">
-        <input placeholder="Masukan Nama Perusahaan..." type="text" name="nama" id="">
-        <input placeholder="Masukan Lokasi Perusahaan..." type="text" name="location" id="">
-        <input placeholder="Masukan Deskripsi Singkat Perusahaan" type="text" name="description" id="">
-        <input type="file" name="photo" id="">
-        <input type="submit" value="Register Investor">
-    </form>
+            <div class="deskripsi-desa">
+                <label for="description">Deskripsi Desa</label> <br>
+                <textarea class="input-login" placeholder="Masukan Deskripsi Singkat..." name="description" id="" cols="30" rows="10"></textarea>
+
+            </div>
+
+            <div class="lokasi-desa">
+                <label for="location">Lokasi Desa</label>
+                <input class="input-login" placeholder="Masukan Lokasi..." type="text" name="location" id="">
+            </div>
+
+
+            <div class="input-portofolio">
+                <label for="portofolio">Portofolio</label>
+                <input type="file" name="portofolio" id="portofolio">
+            </div>
+
+            <div class="input-foto-desa">
+                <label for="photo">Foto</label>
+                <input type="file" name="photo" id="photo">
+            </div>
+
+            <div class="keahlian">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="cat1" id="" value="pertanian">
+                    <label for="cat1">Pertanian</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="cat2" id="" value="peternakan">
+                    <label for="cat2">Peternakan</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="cat3" id="" value="kerajinan">
+                    <label for="cat3">Kerajinan</label>
+                </div>
+            </div>
+
+
+
+            <input class="btn login" type="submit" value="Register Desa">
+        </form>
+
+        <form action="/registerInvestor" method="post" enctype="multipart/form-data">
+
+            <h2 id="login">Register Investor</h2>
+
+            <div class="email">
+                <label for="email">Email</label><br>
+                <input class="input-login" placeholder="Masukan Email..." type="email" name="email" id="">
+            </div>
+
+            <div class="password">
+                <label for="password">Password</label><br>
+                <input class="input-login" placeholder="Masukan Password..." type="password" name="password" id="">
+
+            </div>
+
+            <div class="nama-perusahaan">
+                <label for="nama">Nama Perusahaan</label>
+                <input class="input-login" placeholder="Masukan Nama Perusahaan..." type="text" name="nama" id="">
+
+            </div>
+
+            <div class="lokasi">
+                <label for="location">Lokasi Perusahaan</label>
+                <input class="input-login" placeholder="Masukan Lokasi Perusahaan..." type="text" name="location" id="">
+            </div>
+
+            <div class="descripsi">
+                <label for="description">Deskripsi Perusahaan</label>
+                <input class="input-login" placeholder="Masukan Deskripsi Singkat Perusahaan" type="text" name="description" id="">
+            </div>
+
+            <div class="input-foto">
+                <label for="photo">Foto Perusahaan</label>
+                <input type="file" name="photo" id="">
+            </div>
+
+            <input class="btn login" type="submit" value="Register Investor">
+        </form>
+
+    </div>
+
+
 </body>
 
 <style>
