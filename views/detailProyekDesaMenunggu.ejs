@@ -41,16 +41,17 @@
                                 <div class="card-body desc-proyek">
                                     <div class="left-green"></div>
                                     <div class="deadline">
-                                        <h5 class="card-title deadline">20</h5>
+                                        <% let days = result.waktu_target_selesai.toString().split(" ").slice(0, 4) %>
+                                        <h5 class="card-title deadline"><%= days[2] %></h5>
                                         <div class="hari-tersisa">
-                                            <p>hari</p>
-                                            <p>tersisa</p>
+                                            <p><%= days[1] %></p>
+                                            <p><%= days[3] %></p>
                                         </div>
                                     </div>
 
                                      <p> <% result.waktu_target_selesai.toString().split(" ").slice(0, 4).join(" ") %></p>  
 
-                                    <p class="card-text deadline"><%=result.waktu_target_selesai %></p>
+                                    <!-- <p class="card-text deadline"><%=result.waktu_target_selesai %></p> -->
                                 </div>
                             </div>
                         </div>
