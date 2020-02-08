@@ -99,15 +99,25 @@ router.get("/search", (req, res, next) => {
 });
 
 router.get("/desa/:id", (req, res, next) => {
-    let id = req.params.id;
-    user.findById(id, "desa", (result) => {
-        if(result) {
-            res.render("aboutDesa", {user: req.session.user, result: result});
-        }
-        else{
+    if(req.session.user){
+        if(req.session.type === "desa"){
             res.redirect("/dashboard");
         }
-    });
+        else{
+            let id = req.params.id;
+            user.findById(id, "desa", (result) => {
+                if(result) {
+                    res.render("aboutDesa", {user: req.session.user, result: result});
+                }
+                else{
+                    res.redirect("/dashboard");
+                }
+            });
+        }
+    }
+    else{
+        res.redirect("/login");
+    }
 });
 
 router.post("/registerDesa", (req, res, next) => {
