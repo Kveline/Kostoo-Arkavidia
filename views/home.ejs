@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <% if(user) {%>
+        Hello, <%= user.email %>
+    <% } %>
+    <form action="/logout" method="post">
+        <input type="submit" value="Log out">
+    </form>
 </body>
 </html>

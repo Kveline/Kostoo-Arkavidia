@@ -6,7 +6,13 @@ const user = new User();
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-    res.render("home", {user: req.session.user});
+    console.log(req.session.user);
+    if(req.session.user){
+        res.render("home", {user: req.session.user});
+    }
+    else{
+        res.render("home", {user: null});
+    }
 });
 
 router.get("/login", (req, res, next) => {
@@ -116,6 +122,15 @@ router.post("/registerInvestor", (req, res, next) => {
     }
     else{
         res.redirect("/register");
+    }
+});
+
+router.post("/logout", (req, res, next) => {
+    if(req.session.user){
+        req.session.destroy();
+    }
+    else{
+        res.redirect("/");
     }
 });
 

@@ -15,7 +15,7 @@ User.prototype = {
         pool.query(sql, email, (err, result) => {
             if(err) throw err;
             if(result.length){
-                callback(result);
+                callback(result[0]);
             }
             else{
                 callback(null);
@@ -28,20 +28,22 @@ User.prototype = {
                 if(bcrypt.compareSync(password, result.password)){
                     callback(result);
                 }
-                callback(null);
+                else{
+                    callback(null);
+                }
             }
             else{
                 callback(null);
             }
         })
     },
-    create: function(email, password, type, callback) {
+    create: function(email, pass, type, callback) {
         this.find(email, type, (result) => {
             if(result){
                 callback(null);
             }
             else{
-                let password = bcrypt.hashSync(password, 10);
+                let password = bcrypt.hashSync(pass, 10);
                 let bind = [];
                 bind.push(email);
                 bind.push(password);
