@@ -188,9 +188,10 @@ router.post("/registerInvestor", (req, res, next) => {
     }
 });
 
-router.post("/logout", (req, res, next) => {
+router.all("/logout", (req, res, next) => {
     if (req.session.user) {
         req.session.destroy();
+        res.redirect("/login");
     } else {
         res.redirect("/");
     }
