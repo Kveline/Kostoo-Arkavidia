@@ -211,8 +211,17 @@ router.get("/project", (req, res, next) => {
         else{
             let id = req.query.id;
             user.getProjectById(id, (result) => {
+                console.log(result);
                 if(result.id_investor == req.session.user.id_investor){
-                    res.render("detailProyekInvestor", {user: req.session.user, result: result});
+                    if(result.status == "menunggu"){
+                        res.render("detailProyekInvestorMenunggu", {user: req.session.user, result: result});
+                    }
+                    else if(result.status == "dikerjakan"){
+                        res.render("detailProyekInvestorDikerjakan", {user: req.session.user, result: result});
+                    }
+                    else if(result.status == "selesai"){
+                        res.render("detailProyekInvestorSelesai", {user: req.session.user, result: result});
+                    }
                 }
                 else{
                     res.redirect("/dashboard");

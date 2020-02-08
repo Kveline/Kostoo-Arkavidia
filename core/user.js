@@ -132,15 +132,14 @@ User.prototype = {
     getProject: function (idInvestor, callback){
         let sql = "SELECT * FROM proyek NATURAL JOIN investor WHERE id_investor = ?";
         pool.query(sql, idInvestor, (err, result) => {
-            console.log(result);
-            
             if(err) throw err;
             callback(result);
         });
     },
     getProjectById: function(idProyek, callback){
-        let sql = "SELECT * FROM proyek NATURAL JOIN investor NATURAL JOIN desa WHERE id_proyek = ?";
+        let sql = "SELECT * FROM investor NATURAL JOIN proyek INNER JOIN desa ON proyek.id_desa = desa.id_desa WHERE id_proyek = ?";
         pool.query(sql, idProyek, (err, result) => {
+            console.log(result);
             if(err) throw err;
             if(result.length){
                 callback(result[0]);
