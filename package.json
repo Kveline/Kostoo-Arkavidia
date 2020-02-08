@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/yusufyp/Kostoo#readme",
   "dependencies": {
-    "bcrypt": "^3.0.8",
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6",
