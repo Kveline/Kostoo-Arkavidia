@@ -203,6 +203,28 @@ router.post("/ajukanProyek", (req, res, next) => {
     })
 });
 
+router.get("/project", (req, res, next) => {
+    if(req.session.user){
+        if(req.session.type === "desa"){
+            res.redirect("/dashboard");
+        }
+        else{
+            let id = req.query.id;
+            user.getProjectById(id, (result) => {
+                if(result.id_investor == req.session.user.id_investor){
+                    res.render("detailProyekInvestor", {user: req.session.user, result: result});
+                }
+                else{
+                    res.redirect("/dashboard");
+                }
+            })
+        }
+    }
+    else{
+        res.redirect("/login");
+    }
+});
+
 router.all("/logout", (req, res, next) => {
     if (req.session.user) {
         req.session.destroy();

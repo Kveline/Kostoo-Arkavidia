@@ -137,6 +137,18 @@ User.prototype = {
             if(err) throw err;
             callback(result);
         });
+    },
+    getProjectById: function(idProyek, callback){
+        let sql = "SELECT * FROM proyek NATURAL JOIN investor NATURAL JOIN desa NATURAL JOIN progress_proyek WHERE id_proyek = ?";
+        pool.query(sql, idProyek, (err, result) => {
+            if(err) throw err;
+            if(result.length){
+                callback(result[0]);
+            }
+            else{
+                callback(null);
+            }
+        });
     }
 }
 
