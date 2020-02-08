@@ -99,9 +99,10 @@ router.post("/registerDesa", (req, res, next) => {
             }
             let photoPath = randomstring.generate(84);
             let portofolioPath = randomstring.generate(84);
-
-            photo.mv(path.join(__dirname, "../public/user-uploads/img/" + photoPath + ".jpg"), () => {
-                portofolio.mv(path.join(__dirname, "../public/user-uploads/pdf/" + portofolioPath + ".pdf"), () => {
+            photo.mv(path.join(__dirname, "../public/user-uploads/img/" + photoPath + ".jpg"), (err) => {
+                if (err) throw err;
+                portofolio.mv(path.join(__dirname, "../public/user-uploads/pdf/" + portofolioPath + ".pdf"), (err) => {
+                    if (err) throw err;
                     user.create(req.body.email, req.body.password, req.body.nama, req.body.location, photoPath + ".jpg", req.body.description, portofolioPath + ".pdf", category, "desa", (result) => {
                         if (result) {
                             user.find(req.body.email, "desa", (result) => {
@@ -124,18 +125,28 @@ router.post("/registerDesa", (req, res, next) => {
 });
 
 router.post("/registerInvestor", (req, res, next) => {
-    if (validator.isEmail(req.body.email)) {
-        user.create(req.body.email, req.body.password, "investor", (result) => {
-            if (result) {
-                req.session.user = result;
-                req.session.type = "investor";
-                res.redirect("/dashboard");
-            } else {
-                res.redirect("/register");
-            }
-        })
+    let photo = req.files.photo;
+    if (photo.mimetype.split("/")[1] == "jpeg") {
+        if (validator.isEmail(req.body.email)) {
+            let photoPath = randomstring.generate(84);
+            photo.mv(path.join(__dirname, "../public/user-uploads/img/" + photoPath + ".jpg"), (err) => {
+                user.create(req.body.email, req.body.password, req.body.nama, req.body.lokasi, req.body.photo, req.body.description, null, null, "investor", (result) => {
+                    if (result) {
+                        user.find(req.body.email, "investor", (result) => {
+                            req.session.user = result;
+                            req.session.type = "investor";
+                            res.redirect("/dashboard");
+                        })
+                    } else {
+                        res.redirect("/register");
+                    }
+                })
+            });
+        } else {
+            res.redirect("/register");
+        }
     } else {
-        res.redirect("/register");
+
     }
 });
 
