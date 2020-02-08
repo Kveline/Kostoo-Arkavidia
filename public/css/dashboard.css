@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #F5F9F9!important;
+}
+
+.navbar {
+    display: inline;
+    background-color: #F5F9F9;
+}
+
+.nav-logo {
+    left: 20px;
+    top: 20px;
+}
+
+button.nav-mail,
+button.nav-bell {
+    background-color: transparent;
+}
+
+.nav-mail {
+    padding-right: 30px;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.tawaran-kerjasama,
+.dalam-pengerjaan,
+.selesai {
+    margin-left: 300px;
+}
+
+.card.dashboard {
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+}
+
+h2.section-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 18pt!important;
+    font-weight: bold;
+}
+
+.waktu-penawaran {
+    background-color: #3B8C91;
+    color: white;
+    width: 160px;
+    padding: 5px 20px;
+    border-radius: 8rem;
+}
+
+.selengkapnya {
+    text-decoration: none;
+    color: #3B8C91;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    font-weight: bold;
+}
+
+.selengkapnya:hover {
+    text-decoration: none;
+    color: #3B8C91;
+    opacity: 0.5;
+}
+
+.next-icon {
+    padding-left: 15px;
+}
+
+
+/* deskripsi proyek */
+
+.deskripsi-proyek {
+    margin-left: 300px;
+}
+
+a.proyek-title,
+h2.deskripsi-title {
+    font-size: 28pt;
+    font-weight: bold;
+    color: black;
+}
+
+h2.deskripsi-title {
+    margin-top: 60px;
+}
+
+h5.card-title.deadline {
+    font-size: 40pt;
+    color: #3B8C91;
+    margin-top: -10px;
+    margin-left: 25px;
+}
+
+p.card-text.deadline {
+    margin-left: 25px;
+}
+
+h5.mou {
+    font-weight: bold;
+}
+
+p.proyek-namaPerusahaan,
+p.deskripsi-teks {
+    font-size: 18pt;
+    margin-bottom: 60px;
+}
+
+p.deskripsi-teks {
+    font-size: 14pt;
+    line-height: 2;
+}
+
+.left-green {
+    position: absolute;
+    margin: -21px;
+    width: 10px;
+    min-height: 140px;
+    background-color: #3B8C91;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.deadline {
+    display: flex;
+}
+
+.hari-tersisa>p {
+    margin-bottom: 0px!important;
+    margin-left: 15px;
+}
+
+.card.proyek {
+    min-height: 140px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+}
+
+.proyek-title {
+    display: flex;
+}
+
+.proyek-title-left {
+    margin-right: 30px;
+    margin-top: 16px;
+}
+
+.card-right {
+    vertical-align: middle;
+}
+
+p#tanggal-progress {
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.update-progress {
+    background: #3B8C91;
+    padding: 4px 12px;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+
+.hubungi-investor {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: #3B8C91;
+    font-size: 18px;
+    border: none;
+    letter-spacing: 0.045em;
+    position: fixed;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    position: fixed;
+    right: 8%;
+    bottom: 4%;
+}
+
+
+/* dashboard investor */
+
+.belum-cari-target {
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 40px;
+    background-color: white;
+    text-align: center;
+    width: 719px;
+    padding: 18px;
+    border: 1px solid #F0F0F0;
+    height: 95px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.belum-cari-target p {
+    text-align: left;
+    color: #727272;
+}
+
+.belum-cari-target button {
+    border: none;
+    font-size: 13px;
+    color: white;
+    background-color: #3B8C91;
+    padding: 8px 16px;
+    border-radius: 24px;
+    width: 200px;
+}
+
+.menunggu-konfirmasi {
+    margin-left: 300px;
+}
+
+.card.proyek-not-selesai {
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: white;
+    text-align: center;
+    height: 95px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.proyek-not-selesai p {
+    color: #727272;
+    font-size: 18px;
+    margin-bottom: -4px;
+}

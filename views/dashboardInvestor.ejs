@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Investor</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+
 <body>
     <%- include('sideBarInvestor'); -%>
 
+        <!-- <nav class="navbar fixed-top">
+            <div class="nav-brand left">
+                <img class="nav-logo" src="img/koostoo-logo.svg" alt="">
+            </div>
+            <div class="nav-brand right">
+                <button class="nav-mail btn"><img src="img/mail-icon.svg" alt=""></button>
+                <button class="nav-bell btn"><img src="img/bell-icon.svg" alt=""></button>
+            </div>
+        </nav> -->
+        <div class="container">
+            <section class="menunggu-konfirmasi">
+                <h2 class="section-title">Menunggu Konfirmasi</h2>
+                <div class="belum-cari-target">
+                    <p>Tidak ada proyek yang sedang dalam tahap menunggu konfirmasi. Yuk, jalin kerja sama dengan desa sekarang!</p>
+                    <button>Cari target Investasi</button>
+                </div>
+            </section>
+            <section class="dalam-pengerjaan">
+                <h2 class="section-title">Dalam Pengerjaan</h2>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Butuh Susu Segar 20 Liter/hari</h5>
+                                <p class="card-text">PT Maju Makmur</p>
+                                <h6 class="card-text">Rp 10.000.000,00</h6>
+                                <div class="btn-selengkapnya">
+                                    <a class="selengkapnya" href="#">SELENGKAPNYA<span class="next-icon"><img src="img/next-icon.svg" alt=""></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Butuh Susu Segar 20 Liter/hari</h5>
+                                <p class="card-text">PT Maju Makmur</p>
+                                <h6 class="card-text">Rp 10.000.000,00</h6>
+                                <div class="btn-selengkapnya">
+                                    <a class="selengkapnya" href="#">SELENGKAPNYA<span class="next-icon"><img src="img/next-icon.svg" alt=""></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="selesai">
+                <h2 class="section-title">Selesai</h2>
 
+                <div class="card proyek-not-selesai">
+                    <p>Semua proyek Anda masih dalam tahap pengerjaan</p>
+                </div>
+            </section>
+        </div>
 </body>
+
 </html>
