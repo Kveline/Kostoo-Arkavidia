@@ -31,7 +31,7 @@
                 <% for(let i = 0; i < result.length; i++) {%>
                     <div class="info-desa">
                         <div class="foto-desa">
-                            <img style="margin-left: 20px;" width="80px" src="img/fotoListdesa.png" alt="">
+                            <img style="margin-left: 20px;" width="80px" src="user-uploads/img/<%= result[i].foto %>" alt="">
                         </div>
         
                         <div class="deskripsi-desa">
@@ -40,7 +40,6 @@
                             <p class="deskripsi-desa-penjelasan"><%= result[i].deskripsi %></p>
                             <span class="keahlian"><%= result[i].bidang_dikuasai %></span>
                         </div>
-        
                     </div>
                     <% } %>
               <!-- end of foreach -->

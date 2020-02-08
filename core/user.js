@@ -94,7 +94,6 @@ User.prototype = {
         let sql = "SELECT * FROM desa";
         pool.query(sql, (err, result) => {
             if (err) throw err;
-            console.log(result);
             callback(result);
         })
     },
@@ -139,7 +138,6 @@ User.prototype = {
     getProjectById: function(idProyek, callback){
         let sql = "SELECT * FROM investor NATURAL JOIN proyek INNER JOIN desa ON proyek.id_desa = desa.id_desa WHERE id_proyek = ?";
         pool.query(sql, idProyek, (err, result) => {
-            console.log(result);
             if(err) throw err;
             if(result.length){
                 callback(result[0]);
@@ -152,14 +150,14 @@ User.prototype = {
     getProgress: function(idProyek, callback){
         let sql = "SELECT * FROM progress_proyek WHERE id_proyek = ?";
         pool.query(sql, idProyek, (err, result) => {
-            console.log(result);
             if(err) throw err;
             callback(result);
         });
     },
     getProjectDesa: function(idDesa, callback){
-        let sql = "SELECT * FROM proyek NATURAL JOIN desa WHERE id_desa = ?";
+        let sql = "SELECT * FROM investor NATURAL JOIN proyek INNER JOIN desa ON proyek.id_desa = desa.id_desa WHERE desa.id_desa = ?";
         pool.query(sql, idDesa, (err, result) => {
+            console.log(result);
             if(err) throw err;
             callback(result);
         });
