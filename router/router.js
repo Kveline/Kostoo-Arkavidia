@@ -8,7 +8,6 @@ const path = require("path");
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-    console.log(req.session.user);
     if (req.session.user) {
         res.render("home", { user: req.session.user });
     } else {
