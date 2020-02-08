@@ -156,6 +156,13 @@ User.prototype = {
             if(err) throw err;
             callback(result);
         });
+    },
+    getProjectDesa: function(idDesa, callback){
+        let sql = "SELECT * FROM proyek NATURAL JOIN desa WHERE id_desa = ?";
+        pool.query(sql, idDesa, (err, result) => {
+            if(err) throw err;
+            callback(result);
+        });
     }
 }
 

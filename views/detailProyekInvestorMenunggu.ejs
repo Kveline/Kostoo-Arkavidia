@@ -23,16 +23,12 @@
         <%- include('sideBarDesa'); -%>
      <% } %>
 
-
-
-
-  
         <div class="container">
             <section class="deskripsi-proyek">
                 <div class="card-atas">
                     <div class="proyek-title">
                         <div class="proyek-title-left">
-                            <img src="img/back-icon.svg" alt="">
+                            <img src="img/back-icon.svg" alt="" onclick="window.location='/dashboard'">
                         </div>
                         <div class="proyek-title-right">
                             <a class="proyek-title" href="#"><%=result.nama_proyek %></a>
@@ -58,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <!-- <div class="col-sm-6">
                             <div class="card proyek border-top-0 border-right-0 border-bottom-0">
                                 <div class="card-body">
                                     <div class="left-green"></div>
@@ -72,14 +68,14 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="paragraf-deskripsi">
                     <h2 class="deskripsi-title" href="#">Deskripsi Proyek</h2>
                     <p class="deskripsi-teks"><%=result.deskripsi_proyek%></p>
                 </div>
-                <div class="progress-proyek">
+                <!-- <div class="progress-proyek">
                     <h2 class="deskripsi-title" href="#">Progress Proyek</h2>
                     <div class="row mt-1">
                         <div class="col-md-12">
@@ -102,8 +98,7 @@
                             <button class="update-progress">Update Progress</button>
                         </div>
                     </div>
-
-                </div>
+                </div> -->
             </section>
         </div>
 </body>

@@ -72,11 +72,13 @@ router.post("/loginInvestor", (req, res, next) => {
 router.get("/dashboard", (req, res, next) => {
     if (req.session.user) {
         if (req.session.type === "desa") {
-            res.render("dashboardDesa", { user: req.session.user });
+            user.getProjectDesa(req.session.user.id_desa, (result) => {
+                res.render("dashboardDesa", { user: req.session.user, result: result });
+            });
         } else {
             user.getProject(req.session.user.id_investor, (result) => {
                 res.render("dashboardInvestor", { user: req.session.user, result: result });
-            })
+            });
         }
     } else {
         res.redirect("login");
