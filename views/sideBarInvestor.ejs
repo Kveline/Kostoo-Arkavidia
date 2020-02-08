@@ -16,19 +16,19 @@
     margin: 14px;" src="img/koostoo-logo.svg" alt="">
     <nav>
         <div>
-            <img width="280px" src="img/profileInvestor.png" alt="">
+            <img width="280px" src="user-uploads/img/<%=user.foto_perusahaan%>" alt="">
         </div>
 
         <br>
         <div class="profil">
-            <p class="nama-desa">PT. Maju Makmur</p>
-            <p class="lokasi-desa">Wonogiri, Jawa Tengah</p>
+            <p class="nama-desa"><%=user.nama_perusahaan%></p>
+            <p class="lokasi-desa"><%=user.lokasi%></p>
             <hr>
         </div>
 
 
         <div class="sub-menu">
-            <a href="">Proyek</a>
+            <a href="/dashboard">Proyek</a>
             <a href="">Profil Investor</a>
             <a href="/search">Jelajah Target Investasi</a>
         </div>

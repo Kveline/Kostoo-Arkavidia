@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+/* navbar */
+nav {
+    background: #FFFFFF;
+    box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 22px 0px 0px;
+    position: fixed;
+    width: 280px;
+    height: 100%;
+}
+
+.profil{
+    margin-left:40px;
+    margin-right: 10px;
+}
+
+.nama-desa{
+    color: #394A6D;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.lokasi-desa{
+    color: #394A6D;
+    font-size: 16px;
+    margin-top: -14px;
+    font-weight: 300;
+}
+
+.sub-menu{
+    margin-left:40px;
+    margin-top: 40px;
+}
+
+.sub-menu a{
+    display: block;
+    text-decoration: none;
+    font-weight: 300;
+    color: #394A6D;
+    margin-bottom : 16px;
+}
+
+/* end of navbar */
+
+
+/* content */
+
+.content{
+    margin-left: 320px;
+}
+
+.content h5{
+    font-size: 24px;;
+}
+
+
+.input-pencarian{
+    width: 640px;
+    height: 34px;
+    box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    border: none;
+    border: 1px solid #C4C4C4;
+box-sizing: border-box;
+border-radius: 8px;
+}
+
+.button-submit{
+    background: #3B8C91;
+border-radius: 4px;
+color: white;
+font-weight: bold;
+font-size: 16px;
+padding: 4px 18px;
+border:none;
+height: 34px;
+}
+
+.list-desa{
+    margin-top: 40px;
+}
+
+
+.info-desa{
+    width: 740px;
+    background: #FFFFFF;
+    box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.1);
+    height: 220px;
+    border-left: 14px solid #3B8C91 ;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.deskripsi-desa{
+    margin-left: 40px;
+}
+
+.deskripsi-desa-nama{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.deskripsi-desa-lokasi{
+    font-size: 14px;
+margin-top: -16px;
+color: #727272;
+}
+
+.deskripsi-desa-penjelasan{
+    font-size: 16px;
+}
+
+.keahlian{
+    color: white;
+    background-color: #3B8C91;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* end of content */
+
+
+
+

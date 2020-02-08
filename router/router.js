@@ -88,11 +88,11 @@ router.get("/search", (req, res, next) => {
     } else {
         if (req.query.keyword) {
             user.getListDesaByKeyword(req.query.keyword, (result) => {
-                res.render("jelajahTarget", result);
-            })
+                res.render("jelajahTarget", {result: result, user: req.session.user});
+            });
         } else {
             user.getListDesa((result) => {
-                res.render("jelajahTarget", result);
+                res.render("jelajahTarget", {result: result,user: req.session.user});
             });
         }
     }
@@ -105,10 +105,10 @@ router.post("/registerDesa", (req, res, next) => {
         if (validator.isEmail(req.body.email)) {
             let category = "";
             if (req.body.cat1) {
-                category = category + "Pertanian" + "-";
+                category = category + "Pertanian" + " dan ";
             }
             if (req.body.cat2) {
-                category = category + "Peternakan" + "-";
+                category = category + "Peternakan" + " dan ";
             }
             if (req.body.cat3) {
                 category = category + "Kerajinan";

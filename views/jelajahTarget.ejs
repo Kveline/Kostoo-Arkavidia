@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Investor</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboarddesastyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include('sideBarInvestor'); -%>
+
+  
+        <div class="container">
+
+            <section style="margin-left:240px;">
+                <div class="search-bar">
+                    <form action="">
+                        <input class="input-pencarian" placeholder="Cari Desa..." name="cari-target"  type="text">
+            
+                        <input class="button-submit"  type="submit" value="Cari">
+            
+                    </form>
+                </div>  
+
+
+                <div class="list-desa">
+
+
+                <!-- foreach  -->
+                <% for(let i = 0; i < result.length; i++) {%>
+                    <div class="info-desa">
+                        <div class="foto-desa">
+                            <img style="margin-left: 20px;" width="80px" src="img/fotoListdesa.png" alt="">
+                        </div>
+        
+                        <div class="deskripsi-desa">
+                            <p class="deskripsi-desa-nama"><%= result[i].nama_desa %></p>
+                            <p class="deskripsi-desa-lokasi"><%= result[i].lokasi %></p>
+                            <p class="deskripsi-desa-penjelasan"><%= result[i].deskripsi %></p>
+                            <span class="keahlian"><%= result[i].bidang_dikuasai %></span>
+                        </div>
+        
+                    </div>
+                    <% } %>
+              <!-- end of foreach -->
+
+
+
+                </div>
+
+
+
+            </section>
+           
+        </div>
+</body>
+
+</html>

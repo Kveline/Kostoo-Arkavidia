@@ -76,6 +76,7 @@ User.prototype = {
         let sql = "SELECT * FROM desa";
         pool.query(sql, (err, result) => {
             if (err) throw err;
+            console.log(result);
             callback(result);
         })
     },
