@@ -105,6 +105,43 @@ User.prototype = {
             if (err) throw err;
             callback(result);
         });
+    },
+    addProject: function(idInvestor, idDesa, nama, desc, start, end, price, callback){
+        let sql = "INSERT INTO proyek(id_investor, id_desa, nama_proyek, status, waktu_proyek_mulai, waktu_target_selesai, mou_kerjasama, selesai, nilai_proyek, deskripsi_proyek) VALUES (?, ?, ?, ?, ?, ?, null, null, ?, ?)";
+        let bind = [];
+        let status = "menunggu";
+        bind.push(idInvestor);
+        bind.push(idDesa);
+        bind.push(nama);
+        bind.push(status);
+        bind.push(start);
+        bind.push(end);
+        bind.push(price);
+        bind.push(desc);
+
+        pool.query(sql, bind, (err, result) => {
+            if(err) throw err;
+            if(result) {
+                callback(result);
+            }
+            else{
+                callback(null);
+            }
+        })
+    },
+    getProject: function (idInvestor, callback){
+        let sql = "SELECT * FROM proyek NATURAL JOIN investor WHERE id_investor = ?";
+        pool.query(sql, idInvestor, (err, result) => {
+            console.log(result);
+            
+            if(err) throw err;
+            if(result.length){
+                callback(result);
+            }
+            else{
+                callback(null);
+            }
+        });
     }
 }
 

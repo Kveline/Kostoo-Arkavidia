@@ -74,7 +74,9 @@ router.get("/dashboard", (req, res, next) => {
         if (req.session.type === "desa") {
             res.render("dashboardDesa", { user: req.session.user });
         } else {
-            res.render("dashboardInvestor", { user: req.session.user });
+            user.getProject(req.session.user.id_investor, (result) => {
+                res.render("dashboardInvestor", { user: req.session.user, result: result });
+            })
         }
     } else {
         res.redirect("login");
@@ -191,7 +193,14 @@ router.post("/ajukanProyek", (req, res, next) => {
     let dateStart = req.body.projectStart.split("/").reverse().join("-");
     let dateEnd = req.body.projectEnd.split("/").reverse().join("-");
 
-    user.addProject(req.body.nama, req.body.description)
+    user.addProject(req.session.user.id_investor, req.body.desa, req.body.nama, req.body.description, dateStart, dateEnd, req.body.price, (result) => {
+        if(result) {
+            res.redirect("/dashboard");
+        }
+        else{
+            res.redirect("/search");
+        }
+    })
 });
 
 router.all("/logout", (req, res, next) => {
