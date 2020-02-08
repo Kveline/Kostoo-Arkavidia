@@ -20,6 +20,24 @@ User.prototype = {
             }
         });
     },
+    findById(id, type, callback) {
+        let sql = "";
+        if(type === "desa"){
+            sql = "SELECT * FROM desa WHERE id_desa = ?";
+        }
+        else{
+            sql = "SELECT * FROM investor WHERE id_investor = ?";
+        }
+        pool.query(sql, id, (err, result) => {
+            if(err) throw err;
+            if(result.length){
+                callback(result[0]);
+            }
+            else{
+                callback(null);
+            }
+        })
+    },
     login: function(email, password, type, callback) {
         this.find(email, type, (result) => {
             if (result) {

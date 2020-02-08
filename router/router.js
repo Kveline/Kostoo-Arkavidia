@@ -98,6 +98,18 @@ router.get("/search", (req, res, next) => {
     }
 });
 
+router.get("/desa/:id", (req, res, next) => {
+    let id = req.params.id;
+    user.findById(id, "desa", (result) => {
+        if(result) {
+            res.render("aboutDesa", {user: req.session.user, result: result});
+        }
+        else{
+            res.redirect("/dashboard");
+        }
+    });
+});
+
 router.post("/registerDesa", (req, res, next) => {
     let photo = req.files.photo;
     let portofolio = req.files.portofolio;
@@ -105,10 +117,10 @@ router.post("/registerDesa", (req, res, next) => {
         if (validator.isEmail(req.body.email)) {
             let category = "";
             if (req.body.cat1) {
-                category = category + "Pertanian" + " dan ";
+                category = category + "Pertanian" + " - ";
             }
             if (req.body.cat2) {
-                category = category + "Peternakan" + " dan ";
+                category = category + "Peternakan" + " - ";
             }
             if (req.body.cat3) {
                 category = category + "Kerajinan";
