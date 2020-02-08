@@ -18,9 +18,9 @@
 
             <section style="margin-left:240px;">
                 <div class="search-bar">
-                        <input class="input-pencarian" id="input-search" placeholder="Cari Desa..." name="cari-target"  type="text">
+                    <input class="input-pencarian" id="input-search" placeholder="Cari Desa..." name="cari-target"  type="text">
             
-                        <input class="button-submit" onclick="search()"  type="submit" value="Cari">
+                    <input class="button-submit" onclick="search()"  type="submit" value="Cari">
                 </div>  
 
 
@@ -35,7 +35,7 @@
                         </div>
         
                         <div class="deskripsi-desa">
-                            <p class="deskripsi-desa-nama"><%= result[i].nama_desa %></p>
+                            <p class="deskripsi-desa-nama" onclick="goAboutDesa('<%= result[i].id_desa %>')"><%= result[i].nama_desa %></p>
                             <p class="deskripsi-desa-lokasi"><%= result[i].lokasi %></p>
                             <p class="deskripsi-desa-penjelasan"><%= result[i].deskripsi %></p>
                             <span class="keahlian"><%= result[i].bidang_dikuasai %></span>
@@ -64,6 +64,10 @@
         else{
             window.location = "/search?keyword=" + query.value;
         }
+    }
+
+    function goAboutDesa(id) {
+        window.location = "/desa/" + id;
     }
 </script>
 
