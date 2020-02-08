@@ -35,7 +35,7 @@
                         </div>
         
                         <div class="deskripsi-desa">
-                            <p class="deskripsi-desa-nama" onclick="goAboutDesa('<%= result[i].id_desa %>')"><%= result[i].nama_desa %></p>
+                            <p style="cursor: pointer;" class="deskripsi-desa-nama" onclick="goAboutDesa('<%= result[i].id_desa %>')"><%= result[i].nama_desa %></p>
                             <p class="deskripsi-desa-lokasi"><%= result[i].lokasi %></p>
                             <p class="deskripsi-desa-penjelasan"><%= result[i].deskripsi %></p>
                             <span class="keahlian"><%= result[i].bidang_dikuasai %></span>
@@ -67,7 +67,7 @@
     }
 
     function goAboutDesa(id) {
-        window.location = "/desa/" + id;
+        window.location = "/desa?id=" + id;
     }
 </script>
 

@@ -97,13 +97,13 @@ router.get("/search", (req, res, next) => {
     }
 });
 
-router.get("/desa/:id", (req, res, next) => {
+router.get("/desa", (req, res, next) => {
     if(req.session.user){
         if(req.session.type === "desa"){
             res.redirect("/dashboard");
         }
         else{
-            let id = req.params.id;
+            let id = req.query.id;
             user.findById(id, "desa", (result) => {
                 if(result) {
                     res.render("aboutDesa", {user: req.session.user, result: result});
@@ -185,6 +185,13 @@ router.post("/registerInvestor", (req, res, next) => {
     } else {
 
     }
+});
+
+router.post("/ajukanProyek", (req, res, next) => {
+    let dateStart = req.body.projectStart.split("/").reverse().join("-");
+    let dateEnd = req.body.projectEnd.split("/").reverse().join("-");
+
+    user.addProject(req.body.nama, req.body.description)
 });
 
 router.all("/logout", (req, res, next) => {

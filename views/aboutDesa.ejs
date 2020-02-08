@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "css/dashboard.css" />
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "css/dashboarddesastyle.css" />
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "css/dashboard.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/infoDesa.css">
+
+    
+    
+</head>
+<body>
+    <%- include('sideBarInvestor'); -%>
+
+    <div style="    margin-left: 266px;
+    " class="foto-sampul">
+        <img style="position: absolute;z-index: -1;" width="100%" height="320px" src="img/sampul.png" alt="">
+    </div>
+    <div style="margin-bottom: 160px;" class="container">
+        <section class="tawaran-kerjasama">
+
+            <div class="box-desa">
+                <div class="deskripsi-desa">
+                    <h3 class="box-nama-desa"><%=result.nama_desa %></h3>
+                    <p class="box-lokasi-desa"><%=result.lokasi %></p>
+                </div>
+    
+                <button data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" data-toggle="modal" data-target="#exampleModal" class="ajak-kerjasama">Ajak Kerjasama</button>
+               
+            </div>
+
+            <!-- <a  >Get</a> -->
+
+            <div class="penjelasan-singkat">
+                <h4 class="judul">Deskripsi Desa</h4>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat </p>
+
+             <h4 class="judul">Keahlian</h4>
+
+             <p><%=result.bidang_dikuasai%></p>
+
+
+            </div>
+
+
+            <div class="button-desa">
+                <button target="_blank" class="portofolio-desa" href="user-uploads/pdf/<%=result.portofolio%>"> <img width="17px" src="img/portofolio.svg" alt=""> Portofolio Desa</button>
+                <button class="hubungi-desa"  href=""> <img width="17px" src="img/chatIcon.png" alt=""> Hubungi Desa</button>
+            </div>
+            <!-- Modal -->
+
+
+
+            
+
+        </section>
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ajukan Kerjasama dengan <%=result.nama_desa%></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/ajukanProyek" method="post">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Nama Proyek</label>
+                  <input type="text" class="form-control" id="nama-proyek" name="nama">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Deskripsi Proyek</label>
+                  <textarea class="form-control" id="message-text" name="description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Proyek Dimulai</label>
+                    <input type="date" class="form-control" id="nama-proyek" name="projectStart">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Proyek Selesai</label>
+                    <input type="date" class="form-control" id="nama-proyek" name="projectEnd">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Nilai Proyek</label>
+                    <input type="text" class="form-control" id="nama-proyek" name="price">
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Ajukan Proyek" style="border-radius:8px;background: #3B8C91;" class="btn btn-primary">
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    <style>
+
+        body{
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        nav{
+            top: 102px;
+
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
