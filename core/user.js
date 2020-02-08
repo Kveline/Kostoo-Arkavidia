@@ -40,13 +40,25 @@ User.prototype = {
             } else {
                 let password = bcrypt.hashSync(pass, 10);
                 let bind = [];
-                bind.push(email);
-                bind.push(password);
                 let sql = "";
                 if (type === "desa") {
-                    sql = "INSERT INTO desa(email, password) VALUES (?, ?)";
+                    sql = "INSERT INTO desa(email, password, nama_desa, lokasi, portofolio, foto, deskripsi, bidang_dikuasai) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                    bind.push(email);
+                    bind.push(password);
+                    bind.push(nama);
+                    bind.push(lokasi);
+                    bind.push(portofolio);
+                    bind.push(foto);
+                    bind.push(deskripsi);
+                    bind.push(bidang);
                 } else {
-                    sql = "INSERT INTO investor(email, password) VALUES (?, ?)";
+                    sql = "INSERT INTO investor(email, password, nama_perusahaan, lokasi, foto_perusahaan, deskripsi_perusahaan) VALUES (?, ?, ?, ?, ?, ?)";
+                    bind.push(email);
+                    bind.push(password);
+                    bind.push(nama);
+                    bind.push(lokasi);
+                    bind.push(foto);
+                    bind.push(deskripsi);
                 }
 
                 pool.query(sql, bind, (err, result) => {
