@@ -9,17 +9,23 @@
 </head>
 
 <body>
-    <form action="/registerDesa" method="post">
-        <input type="email" name="email" id="">
-        <input type="password" name="password" id="">
-        <input type="text" name="nama" id="">
-        <textarea name="description" id="" cols="30" rows="10"></textarea>
-        <input type="text" name="location" id="">
-        <input type="file" name="portofolio" id="">
-        <input type="file" name="photo" id="">
+    <form action="/registerDesa" method="post" enctype="multipart/form-data">
+        <input placeholder="Masukan Email..." type="email" name="email" id="">
+        <input placeholder="Masukan Password..." type="password" name="password" id="">
+        <input placeholder="Masukan Nama akun..." type="text" name="nama" id="">
+        <textarea placeholder="Masukan Deskripsi Singkat..." name="description" id="" cols="30" rows="10"></textarea>
+        <input placeholder="Masukan Lokasi..." type="text" name="location" id="">
+        <input type="file" name="portofolio" id="portofolio">
+        <input type="file" name="photo" id="photo">
+
         <input type="checkbox" name="cat1" id="" value="pertanian">
+        <label for="cat1">Pertanian</label>
+
         <input type="checkbox" name="cat2" id="" value="peternakan">
+        <label for="cat2">Peternakan</label>
+
         <input type="checkbox" name="cat3" id="" value="kerajinan">
+        <label for="cat3">Kerajinan</label>
         <input type="submit" value="Register Desa">
     </form>
 
@@ -33,5 +39,11 @@
         <input type="submit" value="Register Investor">
     </form>
 </body>
+
+<style>
+    form input {
+        display: block;
+    }
+</style>
 
 </html>

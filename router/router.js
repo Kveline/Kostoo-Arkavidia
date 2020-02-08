@@ -83,12 +83,9 @@ router.get("/dashboard", (req, res, next) => {
 });
 
 router.post("/registerDesa", (req, res, next) => {
-    console.log(req.files);
     let photo = req.files.photo;
     let portofolio = req.files.portofolio;
-    if (photo.mimetype.split("/")[1] != "jpg" && portofolio.mimetype.split("/")[1] != "pdf") {
-        res.redirect("/register");
-    } else {
+    if (photo.mimetype.split("/")[1] == "jpeg" && portofolio.mimetype.split("/")[1] == "pdf") {
         if (validator.isEmail(req.body.email)) {
             let category = "";
             if (req.body.cat1) {
@@ -121,6 +118,8 @@ router.post("/registerDesa", (req, res, next) => {
         } else {
             res.redirect("/register");
         }
+    } else {
+        res.redirect("/register");
     }
 });
 
