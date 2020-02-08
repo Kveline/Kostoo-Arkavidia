@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+/* navbar */
+nav {
+    background: #FFFFFF;
+    box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 22px 0px 0px;
+    position: fixed;
+    width: 280px;
+    height: 100%;
+}
+
+.profil{
+    margin-left:40px;
+    margin-right: 10px;
+}
+
+.nama-desa{
+    color: #394A6D;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.lokasi-desa{
+    color: #394A6D;
+    font-size: 16px;
+    margin-top: -14px;
+    font-weight: 300;
+}
+
+.sub-menu{
+    margin-left:40px;
+    margin-top: 40px;
+}
+
+.sub-menu a{
+    display: block;
+    text-decoration: none;
+    font-weight: 300;
+    color: #394A6D;
+    margin-bottom : 16px;
+}
+
+/* end of navbar */
