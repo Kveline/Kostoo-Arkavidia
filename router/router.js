@@ -240,6 +240,40 @@ router.get("/project", (req, res, next) => {
     }
 });
 
+router.get("/project-list", (req, res, next) => {
+    if(req.session.user){
+        if(req.session.type === "investor"){
+            res.redirect("/dashboard");
+        }
+        else{
+            let id = req.query.id;
+            user.getProjectById(id, (result) => {
+                if(result.id_desa == req.session.user.id_desa){
+                    if(result.status == "menunggu"){
+                        res.render("detailProyekDesaMenunggu", {user: req.session.user, result: result});
+                    }
+                    else if(result.status == "dikerjakan"){
+                        user.getProgress(id, (progress) => {
+                            res.render("detailProyekDesaDikerjakan", {user: req.session.user, result: result, progress: progress});
+                        });
+                    }
+                    else if(result.status == "selesai"){
+                        user.getProgress(id, (progress) => {
+                            res.render("detailProyekDesaSelesai", {user: req.session.user, result: result, progress: progress});
+                        });
+                    }
+                }
+                else{
+                    res.redirect("/dashboard");
+                }
+            })
+        }
+    }
+    else{
+        res.redirect("/login");
+    }
+});
+
 router.all("/logout", (req, res, next) => {
     if (req.session.user) {
         req.session.destroy();
