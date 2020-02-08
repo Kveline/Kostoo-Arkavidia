@@ -296,8 +296,9 @@ input.input-register::placeholder {
 }
 
 .keahlian {
-    display: flex;
+    display: inline;
     margin-top: 20px;
+    width: 100px;
 }
 
 .keahlian div {
@@ -382,4 +383,8 @@ input.input-register::placeholder {
     z-index: 3;
 }
 
+
+.hubungi-investor{
+    z-index: 8;
+}
 

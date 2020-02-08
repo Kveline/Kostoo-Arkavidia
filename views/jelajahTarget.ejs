@@ -31,14 +31,21 @@
                 <% for(let i = 0; i < result.length; i++) {%>
                     <div class="info-desa">
                         <div class="foto-desa">
-                            <img style="margin-left: 20px;" width="80px" src="user-uploads/img/<%= result[i].foto %>" alt="">
+                            <img style="margin-left: 20px;    border-radius: 50%;
+                            " width="80px" src="user-uploads/img/<%= result[i].foto %>" alt="">
                         </div>
         
                         <div class="deskripsi-desa">
                             <p style="cursor: pointer;" class="deskripsi-desa-nama" onclick="goAboutDesa('<%= result[i].id_desa %>')"><%= result[i].nama_desa %></p>
                             <p class="deskripsi-desa-lokasi"><%= result[i].lokasi %></p>
                             <p class="deskripsi-desa-penjelasan"><%= result[i].deskripsi %></p>
-                            <span class="keahlian"><%= result[i].bidang_dikuasai %></span>
+                            <% let bidang = result[i].bidang_dikuasai.split('-') %>
+                        
+                            <% for (let i=0; i<bidang.length; i++) {%>
+                                <span class="keahlian"><%= bidang[i] %></span>
+                            <% } %>
+                           
+
                         </div>
                     </div>
                     <% } %>

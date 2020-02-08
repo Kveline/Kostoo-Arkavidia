@@ -19,13 +19,57 @@
     </form> 
 
     <% if(user.nama_desa == null) {%>
-    
-
-        <button class="hubungi-investor"> <img width="22px" src="img/chatIcon.png" alt=""> Hubungi Desa</button>
+        <button  data-toggle="modal" data-target="#exampleModal2" class="hubungi-investor"> <img width="22px" src="img/chatIcon.png" alt=""> Hubungi Desa</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Kontak Desa</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p style="font-size:16px; color: #727272;">Kamu dapat menghubungi desa melalui email : </p>
+                                <p style="font-size: 20px;font-weight:bold">
+                                    <%=result.email%>
+                                </p>
+        
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <%- include('sideBarInvestor'); -%>
         
     <%} else{ %>  
-        <button class="hubungi-investor"> <img width="22px" src="img/chatIcon.png" alt=""> Hubungi Investor</button>
+        <button  data-toggle="modal" data-target="#exampleModal2" class="hubungi-investor"> <img width="22px" src="img/chatIcon.png" alt=""> Hubungi Investor</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Kontak Investor</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p style="font-size:16px; color: #727272;">Kamu dapat menghubungi investor melalui email : </p>
+                                <p style="font-size: 20px;font-weight:bold">
+                                    <%=result.email%>
+                                </p>
+        
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <%- include('sideBarDesa'); -%>
      <% } %>
         <div class="container">
@@ -113,6 +157,8 @@
                 </div>
             </section>
         </div>
+
+
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
