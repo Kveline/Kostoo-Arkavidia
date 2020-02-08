@@ -148,6 +148,14 @@ User.prototype = {
                 callback(null);
             }
         });
+    },
+    getProgress: function(idProyek, callback){
+        let sql = "SELECT * FROM progress_proyek WHERE id_proyek = ?";
+        pool.query(sql, idProyek, (err, result) => {
+            console.log(result);
+            if(err) throw err;
+            callback(result);
+        });
     }
 }
 

@@ -217,10 +217,14 @@ router.get("/project", (req, res, next) => {
                         res.render("detailProyekInvestorMenunggu", {user: req.session.user, result: result});
                     }
                     else if(result.status == "dikerjakan"){
-                        res.render("detailProyekInvestorDikerjakan", {user: req.session.user, result: result});
+                        user.getProgress(id, (progress) => {
+                            res.render("detailProyekInvestorDikerjakan", {user: req.session.user, result: result, progress: progress});
+                        });
                     }
                     else if(result.status == "selesai"){
-                        res.render("detailProyekInvestorSelesai", {user: req.session.user, result: result});
+                        user.getProgress(id, (progress) => {
+                            res.render("detailProyekInvestorSelesai", {user: req.session.user, result: result, progress: progress});
+                        });
                     }
                 }
                 else{
