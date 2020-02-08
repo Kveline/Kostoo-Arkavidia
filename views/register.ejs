@@ -10,36 +10,42 @@
 </head>
 
 <body>
+    <div class="logo-koostoo" style="display: flex; justify-content: center;">
+        <img style="position: relative;
+    top: 11px;
+    width: 160px;
+    margin: 14px;" src="img/koostoo-logo.svg" alt="">
+    </div>
 
-    <div class="container">
-        <form action="/registerDesa" method="post" enctype="multipart/form-data">
-            <h2 id="login">Register Desa</h2>
+    <div class="container register">
+        <form action="/registerDesa" method="post" enctype="multipart/form-data" id="register-desa" class="col-6">
+            <h2 id="register">Register Desa</h2>
 
             <div class="email">
                 <label for="email">Email</label><br>
-                <input class="input-login" placeholder="Masukan Email..." type="email" name="email" id="">
+                <input class="input-register" placeholder="Masukan Email..." type="email" name="email" id="">
             </div>
 
             <div class="password">
                 <label for="password">Password</label><br>
-                <input class="input-login" placeholder="Masukan Password..." type="password" name="password" id="">
+                <input class="input-register" placeholder="Masukan Password..." type="password" name="password" id="">
             </div>
 
             <div class="nama-akun">
                 <label for="nama">Nama Desa</label> <br>
-                <input class="input-login" placeholder="Masukan Nama akun..." type="text" name="nama" id="">
+                <input class="input-register" placeholder="Masukan Nama akun..." type="text" name="nama" id="">
 
             </div>
 
             <div class="deskripsi-desa">
                 <label for="description">Deskripsi Desa</label> <br>
-                <textarea class="input-login" placeholder="Masukan Deskripsi Singkat..." name="description" id="" cols="30" rows="10"></textarea>
+                <textarea class="input-register" placeholder="Masukan Deskripsi Singkat..." name="description" id="" cols="30" rows="10"></textarea>
 
             </div>
 
             <div class="lokasi-desa">
                 <label for="location">Lokasi Desa</label>
-                <input class="input-login" placeholder="Masukan Lokasi..." type="text" name="location" id="">
+                <input class="input-register" placeholder="Masukan Lokasi..." type="text" name="location" id="">
             </div>
 
 
@@ -69,41 +75,38 @@
                     <label for="cat3">Kerajinan</label>
                 </div>
             </div>
-
-
-
-            <input class="btn login" type="submit" value="Register Desa">
+            <input class="btn register" type="submit" value="Register Desa">
         </form>
 
-        <form action="/registerInvestor" method="post" enctype="multipart/form-data">
+        <form action="/registerInvestor" method="post" enctype="multipart/form-data" id="register-investor" class="col-6">
 
-            <h2 id="login">Register Investor</h2>
+            <h2 id="register">Register Investor</h2>
 
             <div class="email">
                 <label for="email">Email</label><br>
-                <input class="input-login" placeholder="Masukan Email..." type="email" name="email" id="">
+                <input class="input-register" placeholder="Masukan Email..." type="email" name="email" id="">
             </div>
 
             <div class="password">
                 <label for="password">Password</label><br>
-                <input class="input-login" placeholder="Masukan Password..." type="password" name="password" id="">
+                <input class="input-register" placeholder="Masukan Password..." type="password" name="password" id="">
 
             </div>
 
             <div class="nama-perusahaan">
                 <label for="nama">Nama Perusahaan</label>
-                <input class="input-login" placeholder="Masukan Nama Perusahaan..." type="text" name="nama" id="">
+                <input class="input-register" placeholder="Masukan Nama Perusahaan..." type="text" name="nama" id="">
 
             </div>
 
             <div class="lokasi">
                 <label for="location">Lokasi Perusahaan</label>
-                <input class="input-login" placeholder="Masukan Lokasi Perusahaan..." type="text" name="location" id="">
+                <input class="input-register" placeholder="Masukan Lokasi Perusahaan..." type="text" name="location" id="">
             </div>
 
             <div class="descripsi">
                 <label for="description">Deskripsi Perusahaan</label>
-                <input class="input-login" placeholder="Masukan Deskripsi Singkat Perusahaan" type="text" name="description" id="">
+                <input class="input-register" placeholder="Masukan Deskripsi Singkat Perusahaan" type="text" name="description" id="">
             </div>
 
             <div class="input-foto">
@@ -111,7 +114,7 @@
                 <input type="file" name="photo" id="">
             </div>
 
-            <input class="btn login" type="submit" value="Register Investor">
+            <input class="btn register" type="submit" value="Register Investor">
         </form>
 
     </div>

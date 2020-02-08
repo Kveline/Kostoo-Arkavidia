@@ -243,29 +243,31 @@ p#tanggal-progress {
 
 /* login */
 
-.container.login {
+.container.login,
+.container.register {
     display: flex;
 }
 
-#login {
+.container.register {
+    margin-bottom: 50px;
+}
+
+#login,
+#register {
     margin-bottom: 20px;
 }
 
-#login-desa {
+#login-desa,
+#register-investor {
     display: block;
-    width: 50%;
-}
-
-#login-investor {
-    width: 50%;
 }
 
 .email {
     display: block;
-    margin-bottom: 30px;
 }
 
-.btn.login {
+.btn.login,
+.btn.register {
     background-color: #3B8C91;
     padding: 10px 20px;
     color: white;
@@ -273,14 +275,28 @@ p#tanggal-progress {
     margin-top: 30px;
 }
 
-input.input-login {
+label {
+    font-weight: bold;
+    font-size: 10pt;
+    color: gray;
+}
+
+input.input-login,
+input.input-register {
     border: transparent;
     height: 32px;
     width: 300px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+input.input-register::placeholder {
+    font-size: 10pt;
 }
 
 .keahlian {
     display: flex;
+    margin-top: 20px;
 }
 
 .keahlian div {
