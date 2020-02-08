@@ -1,5 +1,7 @@
 const express = require("express");
-const validator = require("express-validator");
+const validator = require("validator");
+const User = require("../core/user");
+const user = new User();
 
 const router = express.Router();
 
@@ -36,6 +38,9 @@ router.post("/loginDesa", (req, res, next) => {
                 req.session.type = "desa";
                 res.redirect("/dashboard");
             }
+            else{
+                res.redirect("/login");
+            }
         });
     }
     else{
@@ -53,6 +58,9 @@ router.post("/loginInvestor", (req, res, next) => {
                 req.session.user = result;
                 req.session.type = "investor";
                 res.redirect("/dashboard");
+            }
+            else{
+                res.redirect("/login")
             }
         });
     }
@@ -76,8 +84,8 @@ router.get("/dashboard", (req, res, next) => {
 });
 
 router.post("/registerDesa", (req, res, next) => {
-    if(validator.isEmail(email)){
-        user.create(email, password, "desa", (result) => {
+    if(validator.isEmail(req.body.email)){
+        user.create(req.body.email, req.body.password, "desa", (result) => {
             if(result) {
                 req.session.user = result;
                 req.session.type = "desa";
@@ -94,8 +102,8 @@ router.post("/registerDesa", (req, res, next) => {
 });
 
 router.post("/registerInvestor", (req, res, next) => {
-    if(validator.isEmail(email)){
-        user.create(email, password, "investor", (result) => {
+    if(validator.isEmail(req.body.email)){
+        user.create(req.body.email, req.body.password, "investor", (result) => {
             if(result) {
                 req.session.user = result;
                 req.session.type = "investor";

@@ -14,13 +14,13 @@ User.prototype = {
         }
         pool.query(sql, email, (err, result) => {
             if(err) throw err;
-            if(result){
+            if(result.length){
                 callback(result);
             }
             else{
                 callback(null);
             }
-        })
+        });
     },
     login: function (email, password, type, callback) {
         this.find(email, type, (result) => {
