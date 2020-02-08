@@ -239,3 +239,42 @@ p#tanggal-progress {
     font-size: 18px;
     margin-bottom: -4px;
 }
+
+
+/* login */
+
+.container {
+    display: flex;
+}
+
+#login {
+    margin-bottom: 20px;
+}
+
+#login-desa {
+    display: block;
+    width: 50%;
+}
+
+#login-investor {
+    width: 50%;
+}
+
+.email {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.btn.login {
+    background-color: #3B8C91;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 0.5rem;
+    margin-top: 30px;
+}
+
+input.input-login {
+    border: transparent;
+    height: 32px;
+    width: 300px;
+}

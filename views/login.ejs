@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body>
-    <form action="/loginDesa" method="post">
-        <input type="email" name="email" id="">
-        <input type="password" name="password" id="">
-        <input type="submit" value="Login Desa">
-    </form>
 
-    <form action="/loginInvestor" method="post">
-        <input type="email" name="email" id="">
-        <input type="password" name="password" id="">
-        <input type="submit" value="Login Investor">
-    </form>
+<body>
+    <div class="logo-koostoo" style="display: flex; justify-content: center;">
+        <img style="position: relative;
+    top: 11px;
+    width: 160px;
+    margin: 14px;" src="img/koostoo-logo.svg" alt="">
+    </div>
+
+
+    <div class="container">
+        <form action="/loginDesa" method="post" id="login-desa">
+            <h2 id="login">Login Desa</h2>
+            <div class="email">
+                <label for="email">Email</label><br>
+                <input class="input-login" type="email" name="email" id="">
+            </div>
+            <div class="password">
+                <label for="password">Password</label><br>
+                <input class="input-login" type="password" name="password" id="">
+            </div>
+            <input class="btn login" type="submit" value="Login Desa">
+        </form>
+
+        <form action="/loginInvestor" method="post" id="login-investor">
+            <h2 id="login">Login Investor</h2>
+            <div class="email">
+                <label for="email">Email</label><br>
+                <input class="input-login" type="email" name="email" id="">
+            </div>
+            <div class="password">
+                <label for="password">Password</label><br>
+                <input class="input-login" type="password" name="password" id="">
+            </div>
+            <input class="btn login" type="submit" value="Login Investor">
+        </form>
+    </div>
 </body>
+
 </html>
