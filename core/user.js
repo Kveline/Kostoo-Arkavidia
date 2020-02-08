@@ -99,7 +99,8 @@ User.prototype = {
         })
     },
     getListDesaByKeyword: function(keyword, callback) {
-        let sql = "SELECT * FROM desa WHERE nama_desa LIKE %?%";
+        let sql = "SELECT * FROM desa WHERE nama_desa LIKE ?";
+        keyword = "%" + keyword + "%";
         pool.query(sql, keyword, (err, result) => {
             if (err) throw err;
             callback(result);

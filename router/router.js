@@ -92,7 +92,7 @@ router.get("/search", (req, res, next) => {
             });
         } else {
             user.getListDesa((result) => {
-                res.render("jelajahTarget", {result: result,user: req.session.user});
+                res.render("jelajahTarget", {result: result, user: req.session.user});
             });
         }
     }
