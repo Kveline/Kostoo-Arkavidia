@@ -193,6 +193,38 @@ User.prototype = {
                 callback(null);
             }
         })
+    },
+    tolakProyek: function (id, callback) {
+        let sql = "UPDATE proyek SET status=? WHERE id_proyek = ?";
+        let status = "batal";
+        let bind = [];
+        bind.push(status);
+        bind.push(id);
+        pool.query(sql, bind, (err, result) => {
+            if(err) throw err;
+            if(result){
+                callback(result);
+            }
+            else{
+                callback(null);
+            }
+        })
+    },
+    selesaiProyek: function(id, callback) {
+        let sql = "UPDATE proyek SET status=? WHERE id_proyek = ?";
+        let status = "selesai";
+        let bind = [];
+        bind.push(status);
+        bind.push(id);
+        pool.query(sql, bind, (err, result) => {
+            if(err) throw err;
+            if(result){
+                callback(result);
+            }
+            else{
+                callback(null);
+            }
+        })
     }
 }
 

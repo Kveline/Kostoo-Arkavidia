@@ -309,6 +309,28 @@ router.post("/setujuiProyek", (req, res, next) => {
     else{
         res.redirect("/dashboard");
     }
+});
+
+router.post("/tolakProyek", (req, res, next) => {
+    user.tolakProyek(req.body.id, (result) => {
+        if(result){
+            res.redirect("/dashboard");
+        }
+        else{
+            res.redirect("/dashboard");
+        }
+    })
+})
+
+router.post("/selesaiProyek", (req, res, next) => {
+    user.selesaiProyek(req.body.id, (result) => {
+        if(result){
+            res.redirect("/dashboard");
+        }
+        else{
+            res.redirect("/dashboard");
+        }
+    })
 })
 
 router.all("/logout", (req, res, next) => {

@@ -365,4 +365,21 @@ input.input-register::placeholder {
     border: none;
 }
 
+.button-selesai{
+    background-color: #3B8C91;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    letter-spacing: 0.045em;
+    position: fixed;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    position: fixed;
+    right: 28%;
+    bottom: 4%;
+    z-index: 3;
+}
+
 
