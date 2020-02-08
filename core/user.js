@@ -139,7 +139,7 @@ User.prototype = {
         });
     },
     getProjectById: function(idProyek, callback){
-        let sql = "SELECT * FROM proyek NATURAL JOIN investor NATURAL JOIN desa NATURAL JOIN progress_proyek WHERE id_proyek = ?";
+        let sql = "SELECT * FROM proyek NATURAL JOIN investor NATURAL JOIN desa WHERE id_proyek = ?";
         pool.query(sql, idProyek, (err, result) => {
             if(err) throw err;
             if(result.length){
