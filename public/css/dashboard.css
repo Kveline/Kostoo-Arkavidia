@@ -85,7 +85,7 @@ h2.section-title {
 
 a.proyek-title,
 h2.deskripsi-title {
-    font-size: 28pt;
+    font-size: 22px;
     font-weight: bold;
     color: black;
 }
@@ -111,7 +111,7 @@ h5.mou {
 
 p.proyek-namaPerusahaan,
 p.deskripsi-teks {
-    font-size: 18pt;
+    font-size: 16px;
     margin-bottom: 60px;
 }
 
@@ -146,6 +146,7 @@ p.deskripsi-teks {
 
 .proyek-title {
     display: flex;
+
 }
 
 .proyek-title-left {
