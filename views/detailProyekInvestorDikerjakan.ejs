@@ -79,18 +79,18 @@
                     <div class="row mt-1">
                         <div class="col-md-12">
                             <ul class="stepper stepper-vertical">
-                                <% let progress = false; %>
+                                <% let pgs = false; %>
 
                                 <% for(let i = 0; i < progress.length; i++){ %>
-                                    <% progress = true; %>
+                                    <% pgs = true; %>
                                     <li class="completed">
-                                        <p class="card-text" id="tanggal-progress"><%= progress[i].tanggal_progress.toString().split(" ").slice(0, 4)  %>></p>
+                                        <p class="card-text" id="tanggal-progress"><%= progress[i].tanggal_progress.toString().split(" ").slice(1, 4).join(" ")  %></p>
                                         <div class="dokumentasi-progress">
-                                            <p> <%= progress[i].deskripsi_progress %> </p>p>
+                                            <p> <%= progress[i].deskripsi_progress %> </p>
                                         </div>
                                     </li>
                                 <% } %>
-                                <% if(!progress) {%>
+                                <% if(!pgs) {%>
                                     <p>Belum ada progress</p>
                                 <% }%>
                                 <!-- <li class="on-going">

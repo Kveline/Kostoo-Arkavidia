@@ -35,10 +35,11 @@
                             <p class="proyek-namaPerusahaan"><%=result.nama_perusahaan %></p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="    margin-top: -40px;
+                    ">
                         <div class="col-sm-4">
                             <div class="card proyek border-top-0 border-right-0 border-bottom-0">
-                                <div class="card-body desc-proyek">
+                                <div style="height: 86px;" class="card-body desc-proyek">
                                     <div class="left-green"></div>
                                     <div class="deadline">
                                         <% let days = result.waktu_target_selesai.toString().split(" ").slice(0, 4) %>
@@ -102,6 +103,62 @@
                 </div> -->
             </section>
         </div>
+
+        <div class="project-action row">
+            <div class="col-6 setujui-proyek">
+                <h2 class="deskripsi-title" href="#">Upload MoU dan Setujui Proyek</h2>
+                <br>
+                <form style="display: flex;flex-direction: column;" action="/setujuiProyek" method="post" enctype="multipart/form-data">
+
+                    <div class="upload-btn-wrapper">
+                        <button class="btn">Upload a file</button>
+                        <input type="file" name="mou" id="mou">
+                    </div>
+
+                    <input type="text" name="id" id="" value="<%=result.id_proyek%>" style="display: none">
+                    <input  class="button-setuju" style="width: 162px;" type="submit" value="Setujui Proyek">
+                </form>
+            </div>
+    
+            <div class="col-6 tolak-proyek">
+                <h2 class="deskripsi-title" href="#">Tolak Proyek</h2>
+                <br>
+                <form action="/tolakProyek" method="POST">
+                    <input class="button-tolak" type="submit" value="Tolak Proyek">
+                </form>
+            </div>
+        </div>
+
+
+        <style>
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+        </style>
+        
+        
+       
 </body>
 
 </html>

@@ -35,10 +35,10 @@
                             <p class="proyek-namaPerusahaan"><%=result.nama_perusahaan %></p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin-top: -40px;">
                         <div class="col-sm-4">
                             <div class="card proyek border-top-0 border-right-0 border-bottom-0">
-                                <div class="card-body desc-proyek">
+                                <div style="height: 86px;" class="card-body desc-proyek">
                                     <div class="left-green"></div>
                                     <div class="deadline">
                                         <% let days = result.waktu_target_selesai.toString().split(" ").slice(0, 4) %>
@@ -79,18 +79,18 @@
                     <div class="row mt-1">
                         <div class="col-md-12">
                             <ul class="stepper stepper-vertical">
-                                <% let progress = false; %>
+                                <% let pgs = false; %>
 
                                 <% for(let i = 0; i < progress.length; i++){ %>
-                                    <% progress = true; %>
+                                    <% pgs = true; %>
                                     <li class="completed">
-                                        <p class="card-text" id="tanggal-progress"><%= progress[i].tanggal_progress.toString().split(" ").slice(0, 4)  %>></p>
+                                        <p class="card-text" id="tanggal-progress"><%= progress[i].tanggal_progress.toString().split(" ").slice(1, 4).join(" ")  %></p>
                                         <div class="dokumentasi-progress">
-                                            <p> <%= progress[i].deskripsi_progress %> </p>p>
+                                            <p> <%= progress[i].deskripsi_progress %> </p>
                                         </div>
                                     </li>
                                 <% } %>
-                                <% if(!progress) {%>
+                                <% if(!pgs) {%>
                                     <p>Belum ada progress</p>
                                 <% }%>
                                 <!-- <li class="on-going">

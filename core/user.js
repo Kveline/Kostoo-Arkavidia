@@ -157,10 +157,42 @@ User.prototype = {
     getProjectDesa: function(idDesa, callback){
         let sql = "SELECT * FROM investor NATURAL JOIN proyek INNER JOIN desa ON proyek.id_desa = desa.id_desa WHERE desa.id_desa = ?";
         pool.query(sql, idDesa, (err, result) => {
-            console.log(result);
             if(err) throw err;
             callback(result);
         });
+    },
+    setujuiProyek: function (id, mou, callback){
+        let sql = "UPDATE proyek SET mou_kerjasama = ?, status=? WHERE id_proyek = ?";
+        let bind = [];
+        let status = "dikerjakan";
+        bind.push(mou);
+        bind.push(status);
+        bind.push(id);
+        pool.query(sql, bind, (err, result) => {
+            if(err) throw err;
+            if(result){
+                callback(result);
+            }
+            else{
+                callback(null);
+            }
+        })
+    },
+    addProgress: function(id, date, desc, callback){
+        let sql = "INSERT INTO progress_proyek(id_proyek, tanggal_progress, deskripsi_progress) VALUES (?, ?, ?)";
+        let bind = [];
+        bind.push(id);
+        bind.push(date);
+        bind.push(desc);
+        pool.query(sql, bind, (err, result) => {
+            if(err) throw err;
+            if(result){
+                callback(result);
+            }
+            else{
+                callback(null);
+            }
+        })
     }
 }
 

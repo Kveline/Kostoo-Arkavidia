@@ -35,10 +35,10 @@
                             <p class="proyek-namaPerusahaan"><%=result.nama_perusahaan %></p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin-top: -40px;">
                         <div class="col-sm-4">
                             <div class="card proyek border-top-0 border-right-0 border-bottom-0">
-                                <div class="card-body desc-proyek">
+                                <div style="height: 86px;" class="card-body desc-proyek">
                                     <div class="left-green"></div>
                                     <div class="deadline">
                                         <% let days = result.waktu_target_selesai.toString().split(" ").slice(0, 4) %>
@@ -79,18 +79,18 @@
                     <div class="row mt-1">
                         <div class="col-md-12">
                             <ul class="stepper stepper-vertical">
-                                <% let progress = false; %>
+                                <% let pgs = false; %>
 
                                 <% for(let i = 0; i < progress.length; i++){ %>
-                                    <% progress = true; %>
+                                    <% pgs = true; %>
                                     <li class="completed">
-                                        <p class="card-text" id="tanggal-progress"><%= progress[i].tanggal_progress.toString().split(" ").slice(0, 4)  %>></p>
+                                        <p class="card-text" id="tanggal-progress"><%= progress[i].tanggal_progress.toString().split(" ").slice(1, 4).join(" ")  %></p>
                                         <div class="dokumentasi-progress">
-                                            <p> <%= progress[i].deskripsi_progress %> </p>p>
+                                            <p> <%= progress[i].deskripsi_progress %> </p>
                                         </div>
                                     </li>
                                 <% } %>
-                                <% if(!progress) {%>
+                                <% if(!pgs) {%>
                                     <p>Belum ada progress</p>
                                 <% }%>
                                 <!-- <li class="on-going">
@@ -101,11 +101,52 @@
                             </ul>
                             <!-- <button class="update-progress">Update Progress</button> -->
                         </div>
+
+                        <button data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" data-toggle="modal" data-target="#exampleModal" class="tombol-update-progress">Update Progress</button>
                     </div>
 
                 </div>
             </section>
         </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ajukan Kerjasama dengan
+                            <%=result.nama_desa%>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/tambahProgress" method="POST">
+                          
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Deskripsi singkat Progress</label>
+                                <textarea class="form-control" id="message-text" name="description"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Progress dilaksanakan</label>
+                                <input type="date" class="form-control" id="nama-proyek" name="progress">
+                            </div>
+
+                            <input type="text" name="id" id="" value='<%=result.id_proyek%>' style="display: none">
+                           
+                            <div class="modal-footer">
+                                <input type="submit" value="Submit Progress" style="border-radius:8px;background: #3B8C91;" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -205,6 +205,18 @@ router.post("/ajukanProyek", (req, res, next) => {
     })
 });
 
+router.post("/tambahProgress", (req, res, next) => {
+    let date = req.body.progress.split("/").reverse().join("-");
+    user.addProgress(req.body.id, date, req.body.description, (result) => {
+        if(result) {
+            res.redirect(req.get('referer'));
+        }
+        else{
+            res.redirect("/dashboard");
+        }
+    });
+})
+
 router.get("/project", (req, res, next) => {
     if(req.session.user){
         if(req.session.type === "desa"){
@@ -213,7 +225,6 @@ router.get("/project", (req, res, next) => {
         else{
             let id = req.query.id;
             user.getProjectById(id, (result) => {
-                console.log(result);
                 if(result.id_investor == req.session.user.id_investor){
                     if(result.status == "menunggu"){
                         res.render("detailProyekInvestorMenunggu", {user: req.session.user, result: result});
@@ -254,6 +265,7 @@ router.get("/project-list", (req, res, next) => {
                     }
                     else if(result.status == "dikerjakan"){
                         user.getProgress(id, (progress) => {
+                            console.log(progress);
                             res.render("detailProyekDesaDikerjakan", {user: req.session.user, result: result, progress: progress});
                         });
                     }
@@ -273,6 +285,31 @@ router.get("/project-list", (req, res, next) => {
         res.redirect("/login");
     }
 });
+
+router.post("/setujuiProyek", (req, res, next) => {
+    let file = req.files.mou;
+    if(file){
+        if(file.mimetype.split("/")[1] == "pdf"){
+            let mouPath = randomstring.generate(84);
+            file.mv(path.join(__dirname, "../public/user-uploads/pdf/mou/" + mouPath + ".pdf"), (err) => {
+                user.setujuiProyek(req.body.id, mouPath + ".pdf", (result) => {
+                    if(result){
+                        res.redirect("/dashboard");
+                    }
+                    else{
+                        res.redirect("/dashboard");
+                    }
+                })
+            });
+        }
+        else{
+            res.redirect("/dashboard");
+        }
+    }
+    else{
+        res.redirect("/dashboard");
+    }
+})
 
 router.all("/logout", (req, res, next) => {
     if (req.session.user) {
