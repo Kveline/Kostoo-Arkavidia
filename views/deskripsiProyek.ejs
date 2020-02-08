@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Koostoo - Deskripsi Proyek</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <button class="hubungi-investor"> <img width="22px" src="img/chatIcon.png" alt=""> Hubungi Investor</button>
+    <%- include('sideBarDesa'); -%>
+        <div class="container">
+            <section class="deskripsi-proyek">
+                <div class="card-atas">
+                    <div class="proyek-title">
+                        <div class="proyek-title-left">
+                            <img src="img/back-icon.svg" alt="">
+                        </div>
+                        <div class="proyek-title-right">
+                            <a class="proyek-title" href="#">Butuh Susu Segar 20 Liter/hari</a>
+                            <p class="proyek-namaPerusahaan">PT Maju Makmur</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card proyek border-top-0 border-right-0 border-bottom-0">
+                                <div class="card-body desc-proyek">
+                                    <div class="left-green"></div>
+                                    <div class="deadline">
+                                        <h5 class="card-title deadline">20</h5>
+                                        <div class="hari-tersisa">
+                                            <p>hari</p>
+                                            <p>tersisa</p>
+                                        </div>
+                                    </div>
+                                    <p class="card-text deadline">Deadline : 16/01/2020</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card proyek border-top-0 border-right-0 border-bottom-0">
+                                <div class="card-body">
+                                    <div class="left-green"></div>
+                                    <div class="card-left">
+                                        <h5 class="card-title mou">MoU Kerja Sama</h5>
+                                        <p class="card-text">27/12/2019</p>
+                                    </div>
+                                    <div class="card-right">
+                                        <a class="selengkapnya" href="#">BUKA<span class="next-icon"><img src="img/next-icon.svg" alt=""></span></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="paragraf-deskripsi">
+                    <h2 class="deskripsi-title" href="#">Deskripsi Proyek</h2>
+                    <p class="deskripsi-teks">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum distinctio ratione soluta illum qui inventore voluptatibus ullam neque atque accusamus earum consequatur officia incidunt provident, repellendus amet, aut corporis sapiente?</p>
+                </div>
+                <div class="progress-proyek">
+                    <h2 class="deskripsi-title" href="#">Progress Proyek</h2>
+                    <div class="row mt-1">
+                        <div class="col-md-12">
+                            <ul class="stepper stepper-vertical">
+                                <li class="completed">
+                                    <p class="card-text" id="tanggal-progress">27/12/2019</p>
+                                    <h4 class="label">Penandatanganan MoU</h4>
+                                    <div class="dokumentasi-progress">
+                                        <button class="btn"><img src="img/document-icon.svg" alt=""></button>
+                                        <button class="btn"><img src="img/kerjasama-pic.png" alt=""></button>
+                                        <button class="btn"><img src="img/kerjasama-pic.png" alt=""></button>
+                                    </div>
+                                </li>
+                                <li class="on-going">
+                                    <p class="card-text" id="tanggal-progress">27/12/2019</p>
+                                    <h4 class="label">Pembelian Pakan</h4>
+                                    <button class="btn"><img src="img/document-green-icon.svg" alt=""></button>
+                                </li>
+                            </ul>
+                            <button class="update-progress">Update Progress</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+</body>
+
+</html>
