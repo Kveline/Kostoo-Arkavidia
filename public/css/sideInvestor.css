@@ -16,6 +16,12 @@ nav {
     height: 100%;
 }
 
+img.foto-perusahaan{
+    border-radius: 0px 22px 0px 0px;
+    height: 150px;
+    object-fit: cover;
+}
+
 .profil{
     margin-left:40px;
     margin-right: 10px;
