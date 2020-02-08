@@ -1,8 +1,8 @@
-.content{
+.content {
     margin-left: 280px;
 }
 
-.box-desa{
+.box-desa {
     width: 700px;
     height: 112px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -15,63 +15,58 @@
     align-items: center;
 }
 
-.foto-sampul{
-    width:100%;
-    height:320px;
+.foto-sampul {
+    width: 100%;
+    height: 320px;
 }
 
-.ajak-kerjasama{
+.ajak-kerjasama {
     background: #3B8C91;
-border-radius: 24px;
-color:white;
-font-size: 14px;
-font-weight: bold ;
-padding: 8px 14px;
-border:none;
-margin-left: 240px;
-
+    border-radius: 24px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 14px;
+    border: none;
+    margin-left: 240px;
 }
 
-.deskripsi-desa{
-    margin-left: 120px;
+.deskripsi-desa {
     margin-bottom: -10px;
-
 }
 
-.box-nama-desa{
-    color:#394A6D;
+.box-nama-desa {
+    color: #394A6D;
     font-size: 24px;
 }
 
-.box-lokasi-desa{
+.box-lokasi-desa {
     margin-top: -10px;
     color: #394A6D;
     font-size: 16px;
 }
 
-.penjelasan-singkat{
+.penjelasan-singkat {
     margin-top: 40px;
     margin-left: 40px;
 }
 
-.judul{
+.judul {
     font-weight: bold;
-font-size: 20px;
-
+    font-size: 20px;
 }
 
-.button-desa{
+.button-desa {
     position: fixed;
     right: 84px;
     bottom: 74px;
-
 }
 
-.button-desa a{
-    margin:12px;
+.button-desa a {
+    margin: 12px;
 }
 
-.hubungi-desa{
+.hubungi-desa {
     background: white;
     padding: 10px 20px;
     border-radius: 12px;
@@ -82,10 +77,10 @@ font-size: 20px;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
     border-radius: 24px;
     text-decoration: none;
-    border: none   ;
+    border: none;
 }
 
-.portofolio-desa{
+.portofolio-desa {
     text-decoration: none;
     background: #3B8C91;
     padding: 10px 20px;
@@ -98,4 +93,3 @@ font-size: 20px;
     border-radius: 24px;
     border: none;
 }
-
