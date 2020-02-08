@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <form action="/registerDesa" method="post">
         <input type="email" name="email" id="">
         <input type="password" name="password" id="">
+        <input type="text" name="nama" id="">
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
+        <input type="text" name="location" id="">
+        <input type="file" name="portofolio" id="">
+        <input type="file" name="photo" id="">
+        <input type="checkbox" name="cat1" id="" value="pertanian">
+        <input type="checkbox" name="cat2" id="" value="peternakan">
+        <input type="checkbox" name="cat3" id="" value="kerajinan">
         <input type="submit" value="Register Desa">
     </form>
 
     <form action="/registerInvestor" method="post">
         <input type="email" name="email" id="">
         <input type="password" name="password" id="">
+        <input type="text" name="nama" id="">
+        <input type="text" name="location" id="">
+        <input type="text" name="description" id="">
+        <input type="file" name="photo" id="">
         <input type="submit" value="Register Investor">
     </form>
 </body>
+
 </html>
