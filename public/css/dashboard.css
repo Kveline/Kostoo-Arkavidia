@@ -296,9 +296,8 @@ input.input-register::placeholder {
 }
 
 .keahlian {
-    display: inline;
+    display: flex;
     margin-top: 20px;
-    width: 100px;
 }
 
 .keahlian div {
@@ -388,3 +387,8 @@ input.input-register::placeholder {
     z-index: 8;
 }
 
+#tanggal-progress{
+    color: #3B8C91;
+    font-size: 18px;
+    font-weight: bold;
+}
